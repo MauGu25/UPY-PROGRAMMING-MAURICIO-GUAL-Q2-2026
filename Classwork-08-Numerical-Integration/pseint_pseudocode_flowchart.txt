@@ -1,0 +1,73 @@
+Funcion res <- evaluar_f ( x )
+    Definir res Como Real
+    res <- 3 * (x^3) - 2 * x + 5
+FinFuncion
+
+Algoritmo IntegracionNumerica
+    Definir a_input, b_input, f_x, method Como Caracter
+    Definir a, b, h, area, xi, x_left, x_right Como Real
+    Definir n, i Como Entero
+    
+    // INPUT
+    Escribir "Write the left endpoint of the interval:"
+    Leer a_input
+    Si a_input = "pi" Entonces
+        a <- PI
+    SiNo
+        a <- ConvertirANumero(a_input)
+    FinSi
+    
+    Escribir "Write the right endpoint of the interval:"
+    Leer b_input
+    Si b_input = "pi" Entonces
+        b <- PI
+    SiNo
+        b <- ConvertirANumero(b_input)
+    FinSi
+    
+    Escribir "Write the function to integrate (Managed by SubProcess):"
+    Leer f_x
+    
+    Escribir "Select Integration Method (LRM/RRM/MPM/TM):"
+    Leer method
+    
+    n <- 1000
+    
+    // PROCESS
+    h <- (b - a) / n
+    area <- 0.0
+    
+    Si method = "LRM" Entonces
+        Para i <- 0 Hasta n - 1 Con Paso 1 Hacer
+            xi <- a + i * h
+            area <- area + evaluar_f(xi) * h
+        FinPara
+    SiNo
+        Si method = "RRM" Entonces
+            Para i <- 1 Hasta n Con Paso 1 Hacer
+                xi <- a + i * h
+                area <- area + evaluar_f(xi) * h
+            FinPara
+        SiNo
+            Si method = "MPM" Entonces
+                Para i <- 0 Hasta n - 1 Con Paso 1 Hacer
+                    xi <- a + (i + 0.5) * h
+                    area <- area + evaluar_f(xi) * h
+                FinPara
+            SiNo
+                Si method = "TM" Entonces
+                    Para i <- 0 Hasta n - 1 Con Paso 1 Hacer
+                        x_left <- a + i * h
+                        x_right <- x_left + h
+                        area <- area + ((evaluar_f(x_left) + evaluar_f(x_right)) / 2) * h
+                    FinPara
+                SiNo
+                    Escribir "Invalid Method"
+                FinSi
+            FinSi
+        FinSi
+    FinSi
+    
+    // OUTPUT
+    Escribir "Integral aprox: ", area
+FinAlgoritmo

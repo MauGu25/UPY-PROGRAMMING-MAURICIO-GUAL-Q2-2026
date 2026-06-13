@@ -1,0 +1,49 @@
+P1:
+Write the left endpoint of the interval: 1
+Write the right endpoint of the interval: 4
+Write the function to integrate: x**2 + 2*x - 3
+Select Integration Method (LRM/RRM/MPM/TM): TM
+
+Integral ≈ 27.0000045
+
+
+P2:
+Write the left endpoint of the interval: 0
+Write the right endpoint of the interval: 2
+Write the function to integrate: 3*x**3 - x**2 + 5
+Select Integration Method (LRM/RRM/MPM/TM): RRM
+
+Integral ≈ 19.353344000000003
+
+T1:
+Write the left endpoint of the interval: 0
+Write the right endpoint of the interval: pi
+Write the function to integrate: math.sin(x)
+Select Integration Method (LRM/RRM/MPM/TM): TM
+
+Integral ≈ 1.999998355065662
+
+T2:
+Write the left endpoint of the interval: 0
+Write the right endpoint of the interval: math.pi / 2
+Write the function to integrate: math.cos(x) + 1
+Select Integration Method (LRM/RRM/MPM/TM): TM
+
+Integral ≈ 2.57079612117813
+
+
+Tr1:
+Write the left endpoint of the interval: 0
+Write the right endpoint of the interval: 2
+Write the function to integrate: math.exp(x)
+Select Integration Method (LRM/RRM/MPM/TM): TM
+
+Integral ≈ 6.389058228615872
+
+Tr2:
+Write the left endpoint of the interval: 1
+Write the right endpoint of the interval: 3
+Write the function to integrate: math.log(x)
+Select Integration Method (LRM/RRM/MPM/TM): TM
+
+Integral ≈ 1.2958366437821474

@@ -1,5 +1,61 @@
 # INPUT
+DISPLAY "Write the left endpoint of the interval:"
+a_input <- GET user input
+IF a_input is equal to "pi" THEN
+    a <- math.pi
+ELSE
+    a <- convert a_input to float
+ENDIF
+
+DISPLAY "Write the right endpoint of the interval:"
+b_input <- GET user input
+IF b_input is equal to "pi" THEN
+    b <- math.pi
+ELSE
+    b <- convert b_input to float
+ENDIF
+
+DISPLAY "Write the function to integrate:"
+f_x <- GET user input
+
+DISPLAY "Select Integration Method (LRM/RRM/MPM/TM):"
+method <- GET user input (convert to uppercase)
+
+n <- 1000
 
 # PROCESS
+h <- (b - a) / n
+area <- 0.0
+
+IF method is "LRM" THEN
+    FOR i FROM 0 TO n - 1 DO
+        xi <- a + i * h
+        area <- area + evaluate(f_x, xi) * h
+    ENDFOR
+
+ELSE IF method is "RRM" THEN
+    FOR i FROM 1 TO n DO
+        xi <- a + i * h
+        area <- area + evaluate(f_x, xi) * h
+    ENDFOR
+
+ELSE IF method is "MPM" THEN
+    FOR i FROM 0 TO n - 1 DO
+        xi <- a + (i + 0.5) * h
+        area <- area + evaluate(f_x, xi) * h
+    ENDFOR
+
+ELSE IF method is "TM" THEN
+    FOR i FROM 0 TO n - 1 DO
+        x_left <- a + i * h
+        x_right <- x_left + h
+        area <- area + ((evaluate(f_x, x_left) + evaluate(f_x, x_right)) / 2) * h
+    ENDFOR
+
+ELSE
+    DISPLAY "Invalid Method"
+    EXIT PROGRAM
+ENDIF
 
 # OUTPUT
+DISPLAY "Integral ≈ " + area
