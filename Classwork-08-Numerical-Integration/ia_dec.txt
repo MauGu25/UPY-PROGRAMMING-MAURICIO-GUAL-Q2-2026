@@ -1,0 +1,66 @@
+Nombre del estudiante: Mauricio Magín Gual Rivero
+
+IA utilizada: Gemini
+
+Fecha de uso: 2026-06-12
+
+Propósito: Material de apoyo
+
+Prompt utilizado:
+
+No hagas la siguiente actividad por mí, dame una guía rápida paso a paso para hacerla por mí mismo y adelantar lo más que pueda por hoy. Inside your github repository 2026, create a folder named exactly:
+
+Classwork-08-Numerical-Integration
+
+
+
+That folder must contain the following three files:
+
+PPP.txt — your complete pseudocode following class rules: plain English, ← for assignment, # for comments, no Python syntax.
+
+Flowchart.png — your flowchart exported as an image, covering the iteration flow for each method and the decision flow for the three modes.
+
+numerical_integration.py — your working Python program with # INPUT, # PROCESS, and # OUTPUT comments.
+
+Once your folder is complete, commit and push to your main branch with the following commit message:
+
+Add Classwork 08 - Numerical Integration
+
+
+
+Submit the link of your repository through Teams. 
+
+Archivos suministrados: slides.pdf
+
+Respuesta en crudo (raw):
+
+¡Claro que sí! Con gusto te doy una guía estructurada para que puedas armar tu entrega de Integración Numérica, asegurándote de cubrir todos los puntos solicitados.
+Esta tarea es un proyecto más grande que los anteriores, ya que te pide construir una herramienta completa con menú y varios modos de operación.Aquí tienes tu plan de ataque para avanzar lo más posible hoy:
+
+Fase 1: Preparación del Repositorio (¡Haz esto primero!)
+Para asegurar que cumples con las reglas de entrega, deja la estructura lista antes de programar nada:
+
+Abre tu repositorio 2026 en tu computadora.
+
+Crea la carpeta exactamente como se pide: Classwork-08-Numerical-Integration.
+
+Dentro de esa carpeta, crea tres archivos vacíos:
+PPP.txt
+
+Flowchart.png (o prepárate para exportar tu diagrama aquí)
+
+numerical_integration.py
+
+Fase 2: Diseñando el "Core" (El Motor Matemático)
+Antes de preocuparte por los menús ("Default", "Custom", "Auto-adjust" ), debes lograr que la suma de áreas funcione. Entiende la fórmula: El núcleo de la integración numérica es sumar el área de figuras geométricas pequeñas. El ancho de cada figura siempre será $h=\frac{b-a}{n}$. Dibuja el proceso de un método (ej. Rectángulo Izquierdo):Variables: Necesitas saber $a$, $b$, y $n$ nicio: Calcula $h$. Crea un acumulador suma_area = 0.Bucle: Un ciclo for que vaya de $0$ a $n-1$.  Dentro del bucle: Calcula el punto en $x$ ($x_{i}=a+i\cdot h$ ), evalúa la función en ese punto $f(x_{i})$ y multiplica por $h$ para obtener el área. Súmalo a suma_area. Apunta las diferencias:Rectángulo Derecho: El ciclo va de $1$ a $n$.Punto Medio: El ciclo va de $0$ a $n-1$, pero evalúas en $x_{i}+\frac{h}{2}$.Trapecio: Es el promedio de los bordes. Tiene una fórmula ligeramente diferente que evalúa $f(x_0)$ y $f(x_n)$ por separado. ¡Revisa la diapositiva 10 para la fórmula exacta!   Fase 3: Diseñando el Flujo Principal (El Pseudocódigo en PPP.txt)
+Tu PPP debe reflejar el menú interactivo. Aquí te dejo una estructura sugerida en inglés simple usando <- y #:# INPUT: Muestra el menú de funciones (P1, P2, T1, T2, Tr1, Tr2) y pide al usuario elegir una. Pide los límites $a$ y $b$.# PROCESS (Menú de Modos): Pide al usuario elegir el modo: Default, Custom o Auto-adjust.Fija $n \leftarrow 100$.Usa el método del Punto Medio.else if mode is "Custom":Pide $n$ al usuario.Pide el método (Left, Right, Midpoint, Trapezoid)else if mode is "Auto-adjust":
+
+Pide el error_threshold.Aquí necesitarás un bucle while que comience con $n \leftarrow 10$ y vaya duplicando $n$ (n <- n * 2) hasta que el error relativo sea menor al error_threshold. # PROCESS (Cálculo): Llama a la lógica matemática que diseñaste en la Fase 2, dependiendo del método seleccionado.
+
+# OUTPUT:
+
+Muestra el resultado numérico.Calcula y muestra el Error Absoluto y el Error Relativo (necesitas el valor exacto de la integral para esto).Fase 4: El Diagrama de Flujo y el Código
+Flowchart: Te recomiendo usar una herramienta visual como PSeInt (como hicimos ayer) o draw.io. Tu diagrama principal debe mostrar el menú de selección (decisiones en diamantes) y conectarse a "sub-procesos" para los cálculos. No olvides incluir el bucle de iteración (for).Código Python:
+
+Crea funciones separadas para tus funciones matemáticas (ej. def f(x): return math.sin(x)).Crea una función separada para calcular la integral exacta para poder comparar.Sigue estrictamente la estructura de tu PPP.Consejo de prueba: Usa $f(x) = \sin(x)$ de $0$ a $\pi$ primero, el área exacta debe dar 2.0. Si no da eso, hay un error en tu lógica.Para hoy: Te sugiero que te concentres en la Fase 2 y 3. Intenta escribir en papel o en un bloc de notas la lógica del método del "Rectángulo Izquierdo"  y luego esboza cómo se vería el menú en pseudocódigo
+  
