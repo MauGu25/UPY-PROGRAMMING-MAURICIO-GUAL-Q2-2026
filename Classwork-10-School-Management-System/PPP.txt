@@ -1,0 +1,75 @@
+# Required Structures
+users ← Dictionary with usernames, passwords, roles, and names
+subjects ← Tuple with the 7 subject names
+notes ← Dictionary with the grades of each student for each subject
+
+# STEP 1: AUTENTICATION (INPUT).
+loop_active ← TRUE
+
+WHILE loop_active IS TRUE DO
+    DISPLAY "Username: "
+    username ← GET user input
+    DISPLAY "Password: "
+    password ← GET user input
+    
+    IF username exists in users AND password matches users[username]['password'] THEN
+        current_role ← users[username]['rol']
+        loop_active ← FALSE
+    ELSE
+        DISPLAY "Credenciales incorrectas, intenta de nuevo."
+    ENDIF
+ENDWHILE
+
+# STEP 2-5: MENU DISTRIBUTOR (PROCESS)
+IF current_role IS "student" THEN
+    DISPLAY "Welcome, " + users[username]['name'] + "!"
+    approved_subjects ← empty set
+    
+    FOR EACH subject IN subjects DO
+        grade ← notes[username][subject]
+        DISPLAY subject + " " + grade
+        
+        IF grade >= 8.0 THEN
+            ADD subject TO approved_subjects
+        ENDIF
+    ENDFOR
+    
+    pending_subjects ← subjects MINUS approved_subjects
+    DISPLAY "Aprobadas: " + approved_subjects
+    DISPLAY "Pendientes: " + pending_subjects
+
+ELSE IF current_role IS "professor" THEN
+    FOR EACH user IN users DO
+        IF users[user]['rol'] IS "student" THEN
+            DISPLAY user + " " + users[user]['name']
+        ENDIF
+    ENDFOR
+    
+    DISPLAY "Student to grade: "
+    student_choice ← GET user input
+    DISPLAY "Subject to grade: "
+    subject_choice ← GET user input
+    DISPLAY "Grade: "
+    new_grade ← GET user input (converted to decimal)
+    
+    notes[student_choice][subject_choice] ← new_grade
+    DISPLAY "The grade was updated successfully"
+
+ELSE
+    # Coordinator branch
+    FOR EACH user IN users DO
+        IF users[user]['rol'] IS "professor" THEN
+            DISPLAY user + " " + users[user]['name']
+        ENDIF
+    ENDFOR
+    
+    DISPLAY subjects
+    
+    FOR EACH student IN notes DO
+        DISPLAY student
+        FOR EACH subject IN notes[student] DO
+            grade ← notes[student][subject]
+            DISPLAY subject + " " + grade
+        ENDFOR
+    ENDFOR
+ENDIF

@@ -1,0 +1,68 @@
+Algoritmo SchoolManagementSystem
+    Definir username, password, current_role, student_choice, subject_choice Como Caracter
+    Definir new_grade, grade Como Real
+    Definir loop_active Como Logico
+    Definir i, j Como Entero
+    
+    loop_active <- Verdadero
+    
+    // Paso 1: Autenticación
+    Mientras loop_active = Verdadero Hacer
+        Escribir "Username: "
+        Leer username
+        Escribir "Password: "
+        Leer password
+        
+        // Simulando la validacion de diccionarios para dirigir el flujo
+        Si username = "jperez" O username = "jpedrozo" O username = "dgamboa" Entonces
+            Si username = "jperez" Entonces
+                current_role <- "student"
+            SiNo
+                Si username = "jpedrozo" Entonces
+                    current_role <- "professor"
+                SiNo
+                    current_role <- "coordinator"
+                FinSi
+            FinSi
+            loop_active <- Falso
+        SiNo
+            Escribir "Credenciales incorrectas, intenta de nuevo."
+        FinSi
+    FinMientras
+    
+    // Paso 2-5: Distribuidor de menús
+    Si current_role = "student" Entonces
+        Escribir "Welcome, student!"
+        Para i <- 1 Hasta 7 Con Paso 1 Hacer
+            Escribir "Subject ", i, " Grade: "
+            grade <- 8.5 // Simulacion de nota para la toma de decision
+            Si grade >= 8.0 Entonces
+                Escribir "Added to approved_subjects set"
+            FinSi
+        FinPara
+        Escribir "Aprobadas: [...]"
+        Escribir "Pendientes: [...]"
+    SiNo
+        Si current_role = "professor" Entonces
+            Escribir "List of students (Filtered from users)..."
+            Escribir "Student to grade: "
+            Leer student_choice
+            Escribir "Subject to grade: "
+            Leer subject_choice
+            Escribir "Grade: "
+            Leer new_grade
+            Escribir "The grade was updated successfully"
+        SiNo
+            // Rama de Coordinator (Solo lectura)
+            Escribir "List of professors (Filtered from users)..."
+            Escribir "Subjects tuple list..."
+            // Iteracion simulada del diccionario anidado 'notes'
+            Para j <- 1 Hasta 6 Con Paso 1 Hacer
+                Escribir "Student ", j
+                Para i <- 1 Hasta 7 Con Paso 1 Hacer
+                    Escribir "Subject ", i, " grade: ..."
+                FinPara
+            FinPara
+        FinSi
+    FinSi
+FinAlgoritmo

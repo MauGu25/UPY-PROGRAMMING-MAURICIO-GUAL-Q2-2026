@@ -1,0 +1,298 @@
+Nombre del estudiante: Mauricio Magín Gual Rivero
+
+IA utilizada: Gemini
+
+Fecha de uso: 2026-06-12
+
+Propósito: Material de apoyo
+
+Prompt utilizado:
+
+Bien, aquí ya tenemos las estructuras básicas, no corrijas pues es el programa que nos pasó el profesor, lo que necesito es el paso a paso para poder hacer el resto del programa, así te envío mis avances y tú me corriges: estructuras basicas CW10
+
+# Required Structures
+
+users = {
+
+'jperez':  {
+
+'password': '1234',
+
+'rol': 'student',
+
+'name': 'Juan Pérez'
+
+},
+
+'dromo':  {
+
+'password': '1234',
+
+'rol': 'student',
+
+'name': 'Daniela Romo'
+
+},
+
+'mjuarez':  {
+
+'password': '1234',
+
+'rol': 'student',
+
+'name': 'Mauricio Juárez'
+
+},
+
+'mlopez':  {
+
+'password': '1234',
+
+'rol': 'student',
+
+'name': 'María López'
+
+},
+
+'euc':  {
+
+'password': '1234',
+
+'rol': 'student',
+
+'name': 'Ernesto Uc'
+
+},
+
+'cbalam':  {
+
+'password': '1234',
+
+'rol': 'student',
+
+'name': 'Carlos Balam'
+
+},
+
+'jpedrozo':  {
+
+'password': '1234',
+
+'rol': 'professor',
+
+'name': 'Jorge Pedrozo'
+
+},
+
+'dgamboa':  {
+
+'password': '1234',
+
+'rol': 'coordinator',
+
+'name': 'Didier Gamboa'
+
+}
+
+}
+
+
+
+subjects = (
+
+"Discrete Mathematics",
+
+"Programming",
+
+"English II",
+
+"Differential Calculus",
+
+"Probability and Statistics",
+
+"Computer and Server Architecture",
+
+"Socio-Emotional Skills and Conflict Management"
+
+)
+
+
+
+notes = {
+
+'jperez': {
+
+'Discrete Mathematics': 8.5,
+
+'Programming': 9.2,
+
+'English II': 9.0,
+
+'Differential Calculus': 7.8,
+
+'Probability and Statistics': 8.3,
+
+'Computer and Server Architecture': 6.8,
+
+'Socio-Emotional Skills and Conflict Management': 9.5
+
+},
+
+'dromo': {
+
+'Discrete Mathematics': 9.0,
+
+'Programming': 6.7,
+
+'English II': 9.4,
+
+'Differential Calculus': 6.2,
+
+'Probability and Statistics': 9.1,
+
+'Computer and Server Architecture': 6.5,
+
+'Socio-Emotional Skills and Conflict Management': 9.8
+
+},
+
+'mjuarez': {
+
+'Discrete Mathematics': 7.5,
+
+'Programming': 8.0,
+
+'English II': 8.5,
+
+'Differential Calculus': 7.0,
+
+'Probability and Statistics': 7.8,
+
+'Computer and Server Architecture': 6.2,
+
+'Socio-Emotional Skills and Conflict Management': 8.9
+
+},
+
+'mlopez': {
+
+'Discrete Mathematics': 9.5,
+
+'Programming': 9.8,
+
+'English II': 9.2,
+
+'Differential Calculus': 9.0,
+
+'Probability and Statistics': 9.6,
+
+'Computer and Server Architecture': 9.4,
+
+'Socio-Emotional Skills and Conflict Management': 10.0
+
+},
+
+'euc': {
+
+'Discrete Mathematics': 8.2,
+
+'Programming': 6.9,
+
+'English II': 8.8,
+
+'Differential Calculus': 6.0,
+
+'Probability and Statistics': 6.4,
+
+'Computer and Server Architecture': 8.1,
+
+'Socio-Emotional Skills and Conflict Management': 9.0
+
+},
+
+'cbalam': {
+
+'Discrete Mathematics': 8.8,
+
+'Programming': 9.0,
+
+'English II': 8.5,
+
+'Differential Calculus': 6.6,
+
+'Probability and Statistics': 8.9,
+
+'Computer and Server Architecture': 8.7,
+
+'Socio-Emotional Skills and Conflict Management': 9.2
+
+}
+
+} 
+
+
+
+Respuesta en crudo (RAW):
+
+¡Perfecto, Mauricio! Tienes una base de datos excelente y muy completa. Trabajar con las estructuras exactas que el profesor pidió es el primer gran paso para evitar errores lógicos más adelante.
+
+Para mantener un ritmo eficiente y no saturarte, te sugiero abordar la construcción de este código en bloques cortos de 15 minutos, enfocándote en una sola funcionalidad a la vez. Como acordamos, no te daré el código, sino la guía paso a paso para que tú mismo armes la lógica.
+
+Aquí tienes tu hoja de ruta para la sección # PROCESS y # OUTPUT:
+
+Paso 1: El Sistema de Autenticación (Login)
+Tu programa no debe avanzar hasta que el usuario ingrese credenciales válidas.
+
+Escribe un ciclo while True: para crear un bucle infinito.
+
+Dentro del bucle, pide al usuario que ingrese su username y su password usando input().
+
+Utiliza una condición if para verificar dos cosas: primero, que el username exista dentro de las llaves del diccionario users. Segundo, que el password ingresado sea exactamente igual al que está guardado en users[username]['password'].
+
+Si la validación es exitosa, guarda el rol en una variable (ej. current_role = users[username]['rol']), guarda el nombre para darle la bienvenida, y usa un break para romper el ciclo.
+
+Paso 2: El Distribuidor de Menús (Branching)
+Una vez fuera del ciclo while, el usuario ya está autenticado y tienes su rol guardado.
+
+Crea una estructura de control if, elif y else que evalúe la variable current_role.
+
+Tendrás tres ramas principales: una para 'student', otra para 'professor' y otra para 'coordinator'.
+
+Paso 3: La Lógica del Estudiante ('student')
+Dentro de la rama correspondiente al estudiante, debes mostrar su información y calcular sus materias aprobadas.
+
+Imprime un mensaje de bienvenida usando su nombre (sacado del diccionario users).
+
+Utiliza un ciclo for para iterar directamente sobre la tupla subjects. En cada vuelta, imprime el nombre de la materia y la calificación correspondiente buscando en el diccionario notes[username][materia_actual].
+
+Crea un conjunto vacío llamado approved_subjects usando set().
+
+Haz otro ciclo iterando sobre las materias. Con un if, evalúa si la calificación es mayor o igual a 8.0. Si lo es, añade esa materia al conjunto usando el método .add().
+
+Crea un segundo conjunto llamado pending_subjects restando el conjunto de materias aprobadas a la tupla convertida en conjunto: set(subjects) - approved_subjects.
+
+Imprime ambos conjuntos.
+
+Paso 4: La Lógica del Profesor ('professor')
+El profesor necesita ver a los alumnos y modificar sus calificaciones.
+
+Usa un ciclo for para recorrer el diccionario users. Si el 'rol' de ese usuario es 'student', imprime su username y su nombre completo.
+
+Pide al profesor (con input()) que escriba el username del estudiante al que desea calificar.
+
+Pide al profesor que escriba el nombre exacto de la materia (asegúrate de que coincida con la tupla).
+
+Pide la nueva calificación y conviértela a decimal usando float().
+
+Actualiza el valor en el diccionario de calificaciones accediendo mediante las dos llaves: notes[estudiante_elegido][materia_elegida] = nueva_calificacion.
+
+Imprime un mensaje confirmando que la calificación fue actualizada.
+
+Paso 5: La Lógica del Coordinador ('coordinator')
+El coordinador solo necesita un reporte de lectura general.
+
+Itera sobre users e imprime únicamente a los usuarios cuyo 'rol' sea 'professor'.
+
+Imprime directamente la tupla subjects.
+
+Itera sobre el diccionario notes (puedes usar el método .items()). Imprime el username de cada estudiante y, debajo, todas sus calificaciones de forma ordenada.

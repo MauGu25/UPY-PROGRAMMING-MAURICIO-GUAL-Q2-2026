@@ -1,0 +1,84 @@
+Test 1:
+
+Username: jperez
+Password: 1234
+Welcome, Juan Pérez!
+Discrete Mathematics 8.5
+Programming 9.2
+English II 9.0
+Differential Calculus 7.8
+Probability and Statistics 8.3
+Computer and Server Architecture 6.8
+Socio-Emotional Skills and Conflict Management 9.5
+Aprobadas: {'Discrete Mathematics', 'Programming', 'Socio-Emotional Skills and Conflict Management', 'Probability and Statistics', 'English II'}
+Pendientes: {'Computer and Server Architecture', 'Differential Calculus'}
+
+Test 2:
+
+Username: jpedrozo
+Password: 1234
+jperez Juan Pérez
+dromo Daniela Romo
+mjuarez Mauricio Juárez
+mlopez María López
+euc Ernesto Uc
+cbalam Carlos Balam
+Student to grade: jperez
+Subject to grade: Differential Calculus
+Grade: 8
+The grade was updated successfully
+
+Test 3:
+
+Username: dgamboa
+Password: 1234
+jpedrozo Jorge Pedrozo
+('Discrete Mathematics', 'Programming', 'English II', 'Differential Calculus', 'Probability and Statistics', 'Computer and Server Architecture', 'Socio-Emotional Skills and Conflict Management')
+jperez
+Discrete Mathematics 8.5
+Programming 9.2
+English II 9.0
+Differential Calculus 7.8
+Probability and Statistics 8.3
+Computer and Server Architecture 6.8
+Socio-Emotional Skills and Conflict Management 9.5
+dromo
+Discrete Mathematics 9.0
+Programming 6.7
+English II 9.4
+Differential Calculus 6.2
+Probability and Statistics 9.1
+Computer and Server Architecture 6.5
+Socio-Emotional Skills and Conflict Management 9.8
+mjuarez
+Discrete Mathematics 7.5
+Programming 8.0
+English II 8.5
+Differential Calculus 7.0
+Probability and Statistics 7.8
+Computer and Server Architecture 6.2
+Socio-Emotional Skills and Conflict Management 8.9
+mlopez
+Discrete Mathematics 9.5
+Programming 9.8
+English II 9.2
+Differential Calculus 9.0
+Probability and Statistics 9.6
+Computer and Server Architecture 9.4
+Socio-Emotional Skills and Conflict Management 10.0
+euc
+Discrete Mathematics 8.2
+Programming 6.9
+English II 8.8
+Differential Calculus 6.0
+Probability and Statistics 6.4
+Computer and Server Architecture 8.1
+Socio-Emotional Skills and Conflict Management 9.0
+cbalam
+Discrete Mathematics 8.8
+Programming 9.0
+English II 8.5
+Differential Calculus 6.6
+Probability and Statistics 8.9
+Computer and Server Architecture 8.7
+Socio-Emotional Skills and Conflict Management 9.2
