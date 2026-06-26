@@ -1,0 +1,26 @@
+Test 1: 
+Write a spanish verb (ar/er/ir): mirar
+Yo miro
+Tú miras
+Él mira
+Nosotros miramos
+Vosotros mirais
+Ellos miran
+
+Test 2:
+Write a spanish verb (ar/er/ir): correr
+Yo corro
+Tú corres
+Él corre
+Nosotros corremos
+Vosotros correis
+Ellos corren
+
+Test 3:
+Write a spanish verb (ar/er/ir): vivir
+Yo vivo
+Tú vives
+Él vive
+Nosotros vivimos
+Vosotros vivis
+Ellos viven

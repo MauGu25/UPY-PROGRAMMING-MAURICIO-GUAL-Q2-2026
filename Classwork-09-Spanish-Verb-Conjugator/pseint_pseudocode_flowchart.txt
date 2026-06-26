@@ -1,0 +1,55 @@
+Algoritmo SpanishVerbConjugator
+    Definir verb, stem, ending Como Caracter
+    Definir pronouns, conjugations Como Caracter
+    Definir i, largo Como Entero
+    Dimension pronouns[6]
+    Dimension conjugations[6]
+    
+    pronouns[1] <- "Yo"
+    pronouns[2] <- "Tú"
+    pronouns[3] <- "Él"
+    pronouns[4] <- "Nosotros"
+    pronouns[5] <- "Vosotros"
+    pronouns[6] <- "Ellos"
+    
+    // INPUT
+    Escribir "Write a spanish verb (ar/er/ir): "
+    Leer verb
+    
+    // PROCESS
+    largo <- Longitud(verb)
+    stem <- Subcadena(verb, 1, largo - 2)
+    ending <- Subcadena(verb, largo - 1, largo)
+    
+    Si ending = "ar" Entonces
+        conjugations[1] <- "o"
+        conjugations[2] <- "as"
+        conjugations[3] <- "a"
+        conjugations[4] <- "amos"
+        conjugations[5] <- "ais"
+        conjugations[6] <- "an"
+    SiNo
+        Si ending = "er" Entonces
+            conjugations[1] <- "o"
+            conjugations[2] <- "es"
+            conjugations[3] <- "e"
+            conjugations[4] <- "emos"
+            conjugations[5] <- "eis"
+            conjugations[6] <- "en"
+        SiNo
+            Si ending = "ir" Entonces
+                conjugations[1] <- "o"
+                conjugations[2] <- "es"
+                conjugations[3] <- "e"
+                conjugations[4] <- "imos"
+                conjugations[5] <- "is"
+                conjugations[6] <- "en"
+            FinSi
+        FinSi
+    FinSi
+    
+    // OUTPUT
+    Para i <- 1 Hasta 6 Con Paso 1 Hacer
+        Escribir pronouns[i], " ", stem, conjugations[i]
+    FinPara
+FinAlgoritmo

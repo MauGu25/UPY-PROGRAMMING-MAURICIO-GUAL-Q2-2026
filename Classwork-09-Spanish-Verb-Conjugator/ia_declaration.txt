@@ -1,0 +1,50 @@
+Nombre del estudiante: Mauricio Magín Gual Rivero
+
+IA utilizada: Gemini
+
+Fecha de uso: 2026-06-25
+
+Propósito: Material de apoyo
+
+Prompt utilizado: Bien, ya tengo la actividad, solo me falta la entrega y los comandos de bash:
+
+Classwork #09 - Spanish Verb Conjugator Instructions
+
+
+
+Inside your repository UPY-PROGRAMMING-NAME-LAST_NAME-Q2-2026, create a folder named exactly:
+
+
+
+Classwork-09-Spanish-Verb-Conjugator
+
+
+
+That folder must contain the following three files:
+
+PPP.txt — your complete pseudocode following class rules: plain English, ← for assignment, # for comments, no Python syntax.
+
+Flowchart.png — your flowchart exported as an image, covering the iteration flow for each method and the decision flow for the three modes.
+
+spanish_verb_conjugator.py — your working Python program with # INPUT, # PROCESS, and # OUTPUT comments.
+
+Once your folder is complete, commit and push to your main branch with the following commit message:
+
+Add Classwork 09 - Spanish Verb Conjugator
+
+
+
+Submit the link of your repository through Teams.
+
+
+Respuesta en crudo (raw):
+
+¡Qué buen código de Python! Es muy limpio y el uso de un diccionario para las terminaciones (endings) es la forma más óptima de resolverlo en ese lenguaje.
+
+Comandos de Git para tu entrega
+Dado que las instrucciones de tu profesor son muy específicas sobre el mensaje del commit, asegúrate de correr esto en tu terminal una vez que tus tres archivos estén dentro de la carpeta Classwork-09-Spanish-Verb-Conjugator:
+
+
+git add .
+git commit -m "Add Classwork 09 - Spanish Verb Conjugator"
+git push -u origin main

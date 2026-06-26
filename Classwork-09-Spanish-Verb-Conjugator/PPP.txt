@@ -1,0 +1,28 @@
+# Required Structures
+pronouns ← ["Yo", "Tú", "Él", "Nosotros", "Vosotros", "Ellos"]
+endings_ar ← ["o", "as", "a", "amos", "ais", "an"]
+endings_er ← ["o", "es", "e", "emos", "eis", "en"]
+endings_ir ← ["o", "es", "e", "imos", "is", "en"]
+
+# INPUT
+DISPLAY "Write a spanish verb (ar/er/ir): "
+verb ← GET user input
+
+# PROCESS
+stem ← remove the last two letters from verb
+ending ← get the last two letters from verb
+
+IF ending is "ar" THEN
+    conjugations ← endings_ar
+ELSE IF ending is "er" THEN
+    conjugations ← endings_er
+ELSE IF ending is "ir" THEN
+    conjugations ← endings_ir
+ENDIF
+
+# OUTPUT
+FOR index FROM 0 TO 5 DO
+    pronoun ← pronouns[index]
+    termination ← conjugations[index]
+    DISPLAY pronoun + " " + stem + termination
+ENDFOR
